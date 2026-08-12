@@ -22,6 +22,6 @@ manifest:
       revision: main
     - name: zmk-keypeek-layer-notifier
       remote: srwi
-      revision: master
+      revision: b600af3bb7d1795073a4ce23e08d6db46371551b
   self:
     path: config
