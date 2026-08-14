@@ -89,6 +89,17 @@
             #binding-cells = <0>;
             bindings = <&mo 6>, <&mo 5>;
         };
+
+        hyper: hyper {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HYPER";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <(-1)>;
+            require-prior-idle-ms = <(-1)>;
+        };
     };
 
     macros {
@@ -409,10 +420,10 @@
             // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
 
             bindings = <
-&kp TAB      &kp Q               &kp W           &kp E               &kp R  &kp T        &kp Y      &kp U      &kp I                &kp O            &kp P                   &kp BACKSPACE
-&shift_caps  &hm LEFT_CONTROL A  &hm LEFT_ALT S  &hm LEFT_COMMAND D  &kp F  &kp G        &kp H      &kp J      &hm RIGHT_COMMAND K  &hm RIGHT_ALT L  &hm RIGHT_CONTROL SEMI  &kp SQT
-&kp LCTRL    &kp Z               &kp X           &kp C               &kp V  &kp B        &kp N      &kp M      &kp COMMA            &kp DOT          &kp FSLH                &kp RET
-                                                 &mo 7               &mo 1  &kp SPACE    &kp SPACE  &lt 4 TAB  &mouse_adj_layer
+&kp TAB      &kp Q               &kp W           &kp E               &kp R  &kp T        &kp Y                               &kp U      &kp I                &kp O            &kp P                   &kp BACKSPACE
+&shift_caps  &hm LEFT_CONTROL A  &hm LEFT_ALT S  &hm LEFT_COMMAND D  &kp F  &kp G        &kp H                               &kp J      &hm RIGHT_COMMAND K  &hm RIGHT_ALT L  &hm RIGHT_CONTROL SEMI  &kp SQT
+&kp LCTRL    &kp Z               &kp X           &kp C               &kp V  &kp B        &kp N                               &kp M      &kp COMMA            &kp DOT          &kp FSLH                &kp RET
+                                                 &mo 7               &mo 1  &kp SPACE    &hyper LA(LC(LEFT_COMMAND)) ESCAPE  &lt 4 TAB  &mouse_adj_layer
             >;
         };
 
